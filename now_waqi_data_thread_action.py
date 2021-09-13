@@ -69,7 +69,7 @@ def main():
     cities = city_csv.idx.values
 
     # setup multi-processor tasks
-    num_processor = 8
+    num_processor = 16
     async_results = []
     pool = Pool(processes=num_processor)
     for i in np.arange(0, len(cities), num_processor):
