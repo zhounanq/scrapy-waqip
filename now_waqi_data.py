@@ -63,7 +63,7 @@ def main():
     opts = parse_args()
 
     # reading city meta for further fetching
-    city_csv = pd.read_csv(opts.city_meta, index_col=0, encoding="gbk")
+    city_csv = pd.read_csv(opts.city_meta, index_col=0, encoding="GB18030")
     cities = city_csv.idx.values
 
     # fetching detailed waqip info
@@ -72,7 +72,7 @@ def main():
     # writing results into file.
     date_str = datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
     target_file = os.path.join(opts.target_dir, date_str+"_WAQIP_China.csv")
-    dfs_waqi.to_csv(target_file, index=True, encoding="gbk")
+    dfs_waqi.to_csv(target_file, index=True, encoding="GB18030")
 
     print("### Task over @ {}".format(date_str))
 

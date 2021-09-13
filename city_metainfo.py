@@ -78,7 +78,7 @@ def city_meta_json():
         # save data
         date_str = datetime.datetime.now().strftime('%Y_%m_%d')
         target_file = os.path.join("./data/", ("{}_city_metainfo.csv".format(date_str)))
-        city_df.to_csv(target_file, encoding="gbk")
+        city_df.to_csv(target_file, encoding="GB18030")
     print("### Task over!!!")
 
 

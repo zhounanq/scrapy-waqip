@@ -65,7 +65,7 @@ def main():
 
     # reading city meta for further fetching
     city_meta = "./data/city_metainfo_00000000.csv"
-    city_csv = pd.read_csv(city_meta, index_col=0, encoding="gbk")
+    city_csv = pd.read_csv(city_meta, index_col=0, encoding="GB18030")
     cities = city_csv.idx.values
 
     # setup multi-processor tasks
@@ -86,7 +86,7 @@ def main():
     if not os.path.exists(store_data_folder):
         os.makedirs(store_data_folder)
     store_data_file = os.path.join(store_data_folder, (date_time + "_WAQIP_China.csv"))
-    dfs_main.to_csv(store_data_file, index=True, encoding="gbk")
+    dfs_main.to_csv(store_data_file, index=True, encoding="GB18030")
 
     print("### Task over @ {}".format(date_time))
 
